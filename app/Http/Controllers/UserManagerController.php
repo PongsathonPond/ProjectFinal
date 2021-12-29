@@ -10,16 +10,16 @@ class UserManagerController extends Controller
     public function index()
     {
 
-        $users = User::paginate(10);
+        $users = User::paginate(5);
 
-        return view('Admin.UserManager.index', compact('users'));
+        return view('page.Admin.UserManager.index', compact('users'));
     }
     public function edit($id)
     {
 
         $users = User::find($id);
 
-        return view('Admin.UserManager.edit', compact('users'));
+        return view('page.Admin.UserManager.edit', compact('users'));
     }
 
     public function update(Request $request, $id)

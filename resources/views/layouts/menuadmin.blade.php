@@ -4,7 +4,7 @@
           <!-- Brand -->
           <div class="sidenav-header  align-items-center">
               <a class="navbar-brand" href="javascript:void(0)">
-                  <img src="{{ asset('assets') }}/img/brand/KMC.png" alt="...">
+                  {{-- <img src="{{ asset('assets') }}/img/brand/KMC.png" alt="..."> --}}
               </a>
           </div>
           <div class="navbar-inner">
@@ -45,16 +45,16 @@
                       @endif
 
 
-                      @if (request()->routeIs('UserManager'))
+                      @if (request()->routeIs('RoomManager'))
                           <li class="nav-item">
-                              <a class="nav-link active" href="{{ route('UserManager') }}">
+                              <a class="nav-link active" href="{{ route('RoomManager') }}">
                                   <i class="ni ni-tv-2 text-primary"></i>
                                   <span class="nav-link-text">เพิ่มห้อง</span>
                               </a>
                           </li>
                       @else
                           <li class="nav-item">
-                              <a class="nav-link " href="{{ route('UserManager') }}">
+                              <a class="nav-link " href="{{ route('RoomManager') }}">
                                   <i class="ni ni-tv-2 text-primary"></i>
                                   <span class="nav-link-text">เพิ่มห้อง</span>
                               </a>
@@ -143,10 +143,23 @@
                                       <li class="breadcrumb-item"><a href="#">จัดการข้อมูลผู้ใช้</a></li>
                                   @endif
 
-                                  @if (request()->routeIs('UserManagerEdit'))
+                                  {{-- @if (request()->routeIs('UserManagerEdit'))
                                       <li class="breadcrumb-item"><a href="#"><i class="fas fa-address-book"></i></a>
                                       </li>
                                       <li class="breadcrumb-item"><a href="#">จัดการข้อมูลผู้ใช้</a></li>
+                                  @endif --}}
+
+
+                                  @if (request()->routeIs('index'))
+                                      <li class="breadcrumb-item"><a href="#"><i class="fas fa-address-book"></i></a>
+                                      </li>
+                                      <li class="breadcrumb-item"><a href="#">หน้าหลัก</a></li>
+                                  @endif
+
+                                  @if (request()->routeIs('RoomManager'))
+                                      <li class="breadcrumb-item"><a href="#"><i class="fas fa-address-book"></i></a>
+                                      </li>
+                                      <li class="breadcrumb-item"><a href="#">จัดการห้อง</a></li>
                                   @endif
 
                               </ol>

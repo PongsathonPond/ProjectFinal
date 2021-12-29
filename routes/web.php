@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RoomManagerController;
 use App\Http\Controllers\routeController;
 use App\Http\Controllers\UserManagerController;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +27,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/UserManager/edit/{id}', [UserManagerController::class, 'edit'])->name('UserManagerEdit');
     Route::post('/UserManager/update/{id}', [UserManagerController::class, 'update']);
     Route::get('/UserManager/delete/{id}', [UserManagerController::class, 'delete']);
+
+    Route::get('/RoomManager/', [RoomManagerController::class, 'index'])->name('RoomManager');
 
     Route::get('/Addasccessory/', [AsccessoryController::class, 'index'])->name('Addasccessory');
     Route::post('/Addasccessory/add', [AsccessoryController::class, 'store'])->name('Additem');

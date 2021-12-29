@@ -12,11 +12,11 @@ class routeController extends Controller
         $role = Auth::user()->role;
 
         if ($role == '1') {
-            return view('Admin.Route.index');
+            return view('page.Admin.Route.index');
 
         } else {
 
-            return view('User.Route.index');
+            return view('page.User.Route.index');
         }
     }
 }
